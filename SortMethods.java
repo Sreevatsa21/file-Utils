@@ -70,7 +70,18 @@ public class SortMethods {
 	 *	Merge Sort algorithm - in ascending order (you implement)
 	 *	@param arr		array of Integer objects to sort
 	 */
-	public void mergeSort(Integer [] arr) {}
+	public void mergeSort(List<City> list, int left, int right, int sortType) {
+		 if (left < right)
+        {
+
+            int mid = left + (right - left) / 2;
+
+            mergeSort(list, left, mid, sortType);
+            mergeSort(list, mid + 1, right, sortType);
+
+            merge(list, left, mid, right, sortType);
+        }
+	}
 	
 	/*****************************************************************/
 	/************************* For Testing ***************************/
